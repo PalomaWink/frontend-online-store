@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { getCategories, getProductById } from '../services/api';
+import { Link } from 'react-router-dom';
+import { getCategories, getProductsFromCategoryAndQuery } from '../services/api';
 
 class CategoryList extends Component {
   state = {
@@ -21,7 +22,7 @@ class CategoryList extends Component {
   handleClickCategory = async (event) => {
     const { id } = event.target;
     console.log(id);
-    const result = await getProductById(id);
+    const result = await getProductsFromCategoryAndQuery(id);
     console.log(result);
 
     this.setState({
@@ -42,7 +43,7 @@ class CategoryList extends Component {
         <h1>Categorias</h1>
         <ul>
           {categories.map((i) => (
-            <label key={ i.id } data-testid="category" htmlFor="category">
+            <label key={ i.id } data-testid="category" htmlFor={ i.id }>
               <button
                 name="category"
                 type="radio"
@@ -56,9 +57,15 @@ class CategoryList extends Component {
           {
             productsCategory.map((product) => (
               <div data-testid="product" key={ product.id }>
-                <p>{product.title}</p>
-                <img src={ product.thumbnail } alt={ product.title } />
-                <p>{product.price}</p>
+                <Link
+                  to={ `/detalhes/${product.id}` }
+                  data-testid="product-detail-link"
+                >
+                  <p>{product.title}</p>
+                  <img src={ product.thumbnail } alt={ product.title } />
+                  <p>{product.price}</p>
+
+                </Link>
               </div>
             ))
           }
