@@ -21,9 +21,7 @@ class CategoryList extends Component {
 
   handleClickCategory = async (event) => {
     const { id } = event.target;
-    console.log(id);
     const result = await getProductsFromCategoryAndQuery(id);
-    console.log(result);
 
     this.setState({
       productsCategory: result.results,

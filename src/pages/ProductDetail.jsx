@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { getProductById } from '../services/api';
 
 class ProductDetail extends Component {
-  handleClickCategory = async (event) => {
-    const { id } = event.target;
-    console.log(id);
+  state = {
+    productsCategory: {},
+  };
+
+  componentDidMount() {
+    this.handleClickCategory();
+  }
+
+  handleClickCategory = async () => {
+    const { match: { params: { id } } } = this.props;
     const result = await getProductById(id);
     console.log(result);
-
     this.setState({
-      productsCategory: result.results,
+      productsCategory: result,
     });
   };
 
@@ -28,8 +36,8 @@ class ProductDetail extends Component {
           to="/carrinho"
           data-testid="shopping-cart-button"
         >
+          <button data-testid="shopping-cart-button">Carrinho</button>
         </Link>
-        
       </div>
     );
   }
