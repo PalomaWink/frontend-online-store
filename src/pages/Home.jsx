@@ -34,6 +34,10 @@ class Home extends Component {
     });
   };
 
+  handleAddToCart = () => {
+    
+  };
+
   render() {
     const { productsList, isLoading } = this.state;
     return (
@@ -68,6 +72,12 @@ class Home extends Component {
               <p>{product.title}</p>
               <img src={ product.thumbnail } alt={ product.title } />
               <p>{product.price}</p>
+              <button
+                data-testid="product-add-to-cart"
+                onClick={ this.handleAddToCart }
+              >
+                Adicionar ao Carrinho
+              </button>
             </div>
           )))}
       </div>
