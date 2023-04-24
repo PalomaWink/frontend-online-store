@@ -28,11 +28,16 @@ class CategoryList extends Component {
     });
   };
 
-  /*  handleChange = ( }) => {
-    this.setState({
-      name: id,
-    }, this.handleClickCategory());
-  }; */
+  handleAddToCart = (product) => {
+    const carrinho = JSON.parse(localStorage.getItem('productsList'));
+    product.qtd = 1;
+    if (!carrinho) {
+      const listProducts = JSON.stringify([product]);
+      return localStorage.setItem('productsList', listProducts);
+    }
+    const listProducts = JSON.stringify([...carrinho, product]);
+    return localStorage.setItem('productsList', listProducts);
+  };
 
   render() {
     const { categories, productsCategory } = this.state;
@@ -64,6 +69,12 @@ class CategoryList extends Component {
                   <p>{product.price}</p>
 
                 </Link>
+                <button
+                  data-testid="product-add-to-cart"
+                  onClick={ () => this.handleAddToCart(product) }
+                >
+                  Adicionar ao Carrinho
+                </button>
               </div>
             ))
           }

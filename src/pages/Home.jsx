@@ -34,8 +34,25 @@ class Home extends Component {
     });
   };
 
-  handleAddToCart = () => {
-    
+  // localStorage.setItem('keyItemName', value)
+  handleAddToCart = (product) => {
+    const carrinho = JSON.parse(localStorage.getItem('productsList'));
+    product.qtd = 1;
+    if (!carrinho) {
+      const listProducts = JSON.stringify([product]);
+      return localStorage.setItem('productsList', listProducts);
+    }
+    // Precisamos verificar se dentro do carrinho, já existe um product
+    // acha o index do produto de dentro do carrinho (findIndex)
+    // carrinho[index].qtd += 1
+    // retornamos só o carrinho (precisa return)
+    /*  if (carrinho.some((e) => e.Id === product.Id)) {
+      const index = carrinho.findIndex((i) => i.Id === product.Id);
+      carrinho[index].qtd += 1;
+      return console.log(carrinho[index]);
+    } */
+    const listProducts = JSON.stringify([...carrinho, product]);
+    return localStorage.setItem('productsList', listProducts);
   };
 
   render() {
@@ -74,7 +91,7 @@ class Home extends Component {
               <p>{product.price}</p>
               <button
                 data-testid="product-add-to-cart"
-                onClick={ this.handleAddToCart }
+                onClick={ () => this.handleAddToCart(product) }
               >
                 Adicionar ao Carrinho
               </button>
