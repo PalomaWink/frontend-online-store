@@ -56,18 +56,22 @@ class ProductDetail extends Component {
   };
 
   handleRequired = (event) => {
+    const { match: { params: { id } } } = this.props;
     event.preventDefault();
-    const { email, rate, textarea } = this.state;
+    const { email, rate, textarea, recLocalStorage } = this.state;
     const states = {
       mail: email,
       ratings: rate,
       areaText: textarea,
     };
-    if (email && rate && textarea) {
+    if (email && rate) {
+      localStorage.setItem(id, JSON.stringify([...recLocalStorage, states]));
       this.setState({
         validate: true,
+        email: '',
+        rate: '',
+        textarea: '',
       });
-      localStorage.setItem('avaliações', JSON.stringify([states]));
       return this.carregaLocalStorage();
     }
     this.setState({
@@ -76,7 +80,8 @@ class ProductDetail extends Component {
   };
 
   carregaLocalStorage = () => {
-    const comentarios = JSON.parse(localStorage.getItem('avaliações'));
+    const { match: { params: { id } } } = this.props;
+    const comentarios = JSON.parse(localStorage.getItem(id));
     if (comentarios !== null) {
       this.setState({
         recLocalStorage: [...comentarios],
@@ -121,7 +126,7 @@ class ProductDetail extends Component {
         <form>
           <input
             data-testid="product-detail-email"
-            type="email"
+            type="text"
             placeholder="Digite seu e-mail"
             onChange={ this.handleChangeEmail }
             value={ email }
