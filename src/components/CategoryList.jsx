@@ -35,6 +35,12 @@ class CategoryList extends Component {
       const listProducts = JSON.stringify([product]);
       return localStorage.setItem('productsList', listProducts);
     }
+    if (carrinho.some((e) => e.id === product.id)) {
+      const index = carrinho.findIndex((i) => i.id === product.id);
+      carrinho[index].qtd += 1;
+      const listProducts = JSON.stringify([...carrinho]);
+      return localStorage.setItem('productsList', listProducts);
+    }
     const listProducts = JSON.stringify([...carrinho, product]);
     return localStorage.setItem('productsList', listProducts);
   };

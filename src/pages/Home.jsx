@@ -42,15 +42,12 @@ class Home extends Component {
       const listProducts = JSON.stringify([product]);
       return localStorage.setItem('productsList', listProducts);
     }
-    // Precisamos verificar se dentro do carrinho, já existe um product
-    // acha o index do produto de dentro do carrinho (findIndex)
-    // carrinho[index].qtd += 1
-    // retornamos só o carrinho (precisa return)
-    /*  if (carrinho.some((e) => e.Id === product.Id)) {
-      const index = carrinho.findIndex((i) => i.Id === product.Id);
+    if (carrinho.some((e) => e.id === product.id)) {
+      const index = carrinho.findIndex((i) => i.id === product.id);
       carrinho[index].qtd += 1;
-      return console.log(carrinho[index]);
-    } */
+      const listProducts = JSON.stringify([...carrinho]);
+      return localStorage.setItem('productsList', listProducts);
+    }
     const listProducts = JSON.stringify([...carrinho, product]);
     return localStorage.setItem('productsList', listProducts);
   };
