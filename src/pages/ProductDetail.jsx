@@ -56,6 +56,18 @@ class ProductDetail extends Component {
         >
           <button data-testid="shopping-cart-button">Carrinho</button>
         </Link>
+        <form>
+          <input data-testid="product-detail-email" type="email" />
+          <label htmlFor="rate">
+            <input type="radio" id="rate" /* data-testid={ `${index}-rating` } */ />
+            <input type="radio" id="rate" /* data-testid={ `${index}-rating` } */ />
+            <input type="radio" id="rate" /* data-testid={ `${index}-rating` } */ />
+            <input type="radio" id="rate" /* data-testid={ `${index}-rating` } */ />
+            <input type="radio" id="rate" /* data-testid={ `${index}-rating` } */ />
+          </label>
+          <textarea data-testid="product-detail-evaluation" />
+
+        </form>
       </div>
     );
   }
