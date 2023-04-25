@@ -52,7 +52,7 @@ class ShoppingCart extends Component {
     const { recLocalStorage } = this.state;
     return (
       <div>
-        {recLocalStorage.length === 0
+        {recLocalStorage === null || recLocalStorage.length === 0
           ? (
             <p
               data-testid="shopping-cart-empty-message"
