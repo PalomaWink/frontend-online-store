@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class ShoppingCart extends Component {
   state = {
@@ -42,7 +43,6 @@ class ShoppingCart extends Component {
 
   getList = () => {
     const teste = JSON.parse(localStorage.getItem('productsList'));
-    console.log(teste);
     this.setState({
       recLocalStorage: teste,
     });
@@ -85,6 +85,11 @@ class ShoppingCart extends Component {
               </button>
             </div>
           )))}
+        <Link
+          to="/checkout"
+        >
+          <button data-testid="checkout-products">Finalizar compra</button>
+        </Link>
       </div>
     );
   }
