@@ -34,6 +34,24 @@ class Home extends Component {
     });
   };
 
+  // localStorage.setItem('keyItemName', value)
+  handleAddToCart = (product) => {
+    const carrinho = JSON.parse(localStorage.getItem('productsList'));
+    product.qtd = 1;
+    if (!carrinho) {
+      const listProducts = JSON.stringify([product]);
+      return localStorage.setItem('productsList', listProducts);
+    }
+    if (carrinho.some((e) => e.id === product.id)) {
+      const index = carrinho.findIndex((i) => i.id === product.id);
+      carrinho[index].qtd += 1;
+      const listProducts = JSON.stringify([...carrinho]);
+      return localStorage.setItem('productsList', listProducts);
+    }
+    const listProducts = JSON.stringify([...carrinho, product]);
+    return localStorage.setItem('productsList', listProducts);
+  };
+
   render() {
     const { productsList, isLoading } = this.state;
     return (
@@ -68,6 +86,12 @@ class Home extends Component {
               <p>{product.title}</p>
               <img src={ product.thumbnail } alt={ product.title } />
               <p>{product.price}</p>
+              <button
+                data-testid="product-add-to-cart"
+                onClick={ () => this.handleAddToCart(product) }
+              >
+                Adicionar ao Carrinho
+              </button>
             </div>
           )))}
       </div>
