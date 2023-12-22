@@ -27,6 +27,8 @@ O projeto tem a seguinte estrutura de diretórios e arquivos:
     pages/
         Home.jsx
         ShoppingCart.jsx
+        Checkout.jsx
+        ProductDetail.jsx
     services/
         api.js
     setupTests.js
