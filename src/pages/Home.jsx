@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { TfiSearch } from 'react-icons/tfi';
 import CategoryList from '../components/CategoryList';
 import { getProductsFromCategoryAndQuery } from '../services/api';
+import logo from '../images/logo_mercado_livre.png';
 
 class Home extends Component {
   state = {
@@ -56,22 +58,30 @@ class Home extends Component {
     const { productsList, isLoading } = this.state;
     return (
       <div>
-        <p
-          data-testid="home-initial-message"
-        >
-          Digite algum termo de pesquisa ou escolha uma categoria.
-        </p>
-        <input
-          data-testid="query-input"
-          type="text"
-          onChange={ this.handleChange }
-        />
-        <button
-          data-testid="query-button"
-          onClick={ this.handleClickBusca }
-        >
-          Buscar
-        </button>
+        <div className="navbar">
+          <div className="navbar__logo">
+            <img alt="logo do site" src={ logo } />
+            <p>
+              Front End
+              <br />
+              Online Store
+            </p>
+          </div>
+          <div className="navbar__search">
+            <input
+              data-testid="query-input"
+              type="text"
+              onChange={ this.handleChange }
+              placeholder="Digite algum termo de pesquisa ou escolha uma categoria."
+            />
+            <button
+              data-testid="query-button"
+              onClick={ this.handleClickBusca }
+            >
+              <TfiSearch />
+            </button>
+          </div>
+        </div>
         <CategoryList />
         <Link
           to="/carrinho"
@@ -79,21 +89,40 @@ class Home extends Component {
         >
           <button>carrinho</button>
         </Link>
-        {isLoading
-          ? (<p>Nenhum produto foi encontrado</p>)
-          : (productsList.map((product) => (
-            <div data-testid="product" key={ product.id }>
-              <p>{product.title}</p>
-              <img src={ product.thumbnail } alt={ product.title } />
-              <p>{product.price}</p>
-              <button
-                data-testid="product-add-to-cart"
-                onClick={ () => this.handleAddToCart(product) }
-              >
-                Adicionar ao Carrinho
-              </button>
-            </div>
-          )))}
+        <div className="container__home">
+          {isLoading
+            ? (
+              <div className="home__products">
+                <p className="home__no__products">
+                  Nenhum produto
+                  <br />
+                  foi encontrado
+                </p>
+                <p className="home__message">
+                  Digite outro termo de pesquisa
+                  <br />
+                  ou escolha uma categoria
+                </p>
+              </div>
+            )
+            : (productsList.map((product) => (
+              <div data-testid="product" key={ product.id } className="products__list">
+                <h2>{product.attributes[0].value_name}</h2>
+                <p>{product.title}</p>
+                <img src={ product.thumbnail } alt={ product.title } />
+                <p>
+                  R$
+                  {product.price}
+                </p>
+                <button
+                  data-testid="product-add-to-cart"
+                  onClick={ () => this.handleAddToCart(product) }
+                >
+                  Adicionar ao Carrinho
+                </button>
+              </div>
+            )))}
+        </div>
       </div>
     );
   }

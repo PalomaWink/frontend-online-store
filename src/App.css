@@ -1,42 +1,122 @@
-.App {
-  text-align: center;
+.navbar {
+  background-color: #FFE600;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 100px;
+  left: 0;
+  top: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media ( prefers-reduced-motion : no-preference ) {
-
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-
-}
-
-.App-header {
+.navbar__logo {
+  display: flex;
   align-items: center;
-  background-color: #282c34;
-  color: white;
+  justify-content: center;
+  width: 50%;
+}
+
+.navbar__logo img {
+  width: 100px;
+  height: auto;
+}
+
+.navbar__logo p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-left: 10px;
+  color: #484582;
+}
+
+.navbar__search {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+.navbar__search input {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border-right: #b2b2b2 solid 1px;
+}
+
+.navbar__search button {
+  padding: 10px;
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.home__products {
   display: flex;
   flex-direction: column;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
+}
+
+.home__no__products, .home__message {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.home__no__products {
+  color: #3483FA;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.home__message {
+  color: #94979D;
+  font-size: 0.8rem;
+}
+
+.container__home {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  min-height: 100vh;
+  gap: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.products__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto; /* Centraliza o produto na página */
+  max-width: 300px; /* Máxima largura para cada item */
 }
 
-@keyframes App-logo-spin {
+.products__list h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
 
-  from {
-    transform: rotate(0deg);
-  }
+.products__list p {
+  margin: 5px 0;
+  font-size: 0.8rem;
+}
 
-  to {
-    transform: rotate(360deg);
-  }
+.products__list img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.products__list button {
+  background-color: #3483fa;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.products__list button:hover {
+  background-color: #2672d8;
 }
