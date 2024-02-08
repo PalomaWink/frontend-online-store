@@ -123,6 +123,7 @@ class Home extends Component {
               const { reais, centavos } = this.formatPrice(product.price);
               const { originalReais, originalCentavos } = this
                 .formatOriginalPrice(product.original_price);
+              console.log(originalCentavos);
               return (
                 <div data-testid="product" key={ product.id } className="products__list">
                   <span className="products__list__span">

@@ -85,18 +85,19 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin: 20px auto; /* Centraliza o produto na página */
-  max-width: 300px; /* Máxima largura para cada item */
+  margin: 20px auto;
+  max-width: 300px;
+  gap: 5px;
 }
 
 .products__list__span {
-  font-size: 1rem;
+  font-size: 0.7rem;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 .products__list h2 {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   margin: 10px 0;
   font-weight: normal;
 }
@@ -104,7 +105,6 @@
 .products__list p {
   margin: 5px 0;
   font-size: 2rem;
-  
   margin-top: 10px;
 }
 
@@ -130,11 +130,12 @@
 }
 
 .product__shipping {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   color: #2CB56E;
   display: inline;
   line-height: normal;
   margin-top: 5px;
+  font-weight: bold;
 }
 
 .product__shipping__full {
@@ -161,21 +162,20 @@
   margin-left: 5px;
 }
 .product__price {
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 
 .price__reais {
-  font-size: 2rem;
+  font-size: 1.7rem;
   margin-left: 5px;
 }
 
 .price__centavos {
-  font-size: 1rem;
+  font-size: 0.7rem;
   vertical-align: super;
 }
 
 .product__original__price {
-  text-decoration: line-through;
   color: #94979D;
   font-size: 0.8rem;
   margin-top: 5px;
@@ -184,9 +184,11 @@
 .product__original__price__reais {
   font-size: 0.8rem;
   margin-left: 5px;
+  text-decoration: line-through;
 }
 
 .product__original__price__centavos {
   font-size: 0.6rem;
   vertical-align: super;
+  text-decoration: line-through;
 }
