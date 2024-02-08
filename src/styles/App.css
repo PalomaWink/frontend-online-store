@@ -1,0 +1,31 @@
+.home__products {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.home__no__products, .home__message {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.home__no__products {
+  color: #3483FA;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.home__message {
+  color: #94979D;
+  font-size: 0.8rem;
+}
+
+.container__home {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  background-color: #EDEDED;
+}
+

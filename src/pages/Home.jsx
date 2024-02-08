@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { TfiSearch } from 'react-icons/tfi';
+import { PiShoppingCartThin } from 'react-icons/pi';
 import CategoryList from '../components/CategoryList';
 import { getProductsFromCategoryAndQuery } from '../services/api';
 import logo from '../images/logo_mercado_livre.png';
@@ -28,7 +29,6 @@ class Home extends Component {
     this.setState({
       productsList: result.results,
     });
-    console.log(result.results);
   };
 
   formatPrice = (price) => {
@@ -95,14 +95,18 @@ class Home extends Component {
               <TfiSearch />
             </button>
           </div>
+          <div className="navbar__shopping">
+            <Link
+              to="/carrinho"
+              data-testid="shopping-cart-button"
+            >
+              <PiShoppingCartThin size={ 32 } color="blue" />
+            </Link>
+          </div>
         </div>
+
         <CategoryList />
-        <Link
-          to="/carrinho"
-          data-testid="shopping-cart-button"
-        >
-          <button>carrinho</button>
-        </Link>
+
         <div className="container__home">
           {isLoading
             ? (
