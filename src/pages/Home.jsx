@@ -5,6 +5,7 @@ import { PiShoppingCartThin } from 'react-icons/pi';
 import CategoryList from '../components/CategoryList';
 import { getProductsFromCategoryAndQuery } from '../services/api';
 import logo from '../images/logo_mercado_livre.png';
+import { formatPrice, formatOriginalPrice } from '../services/helpers';
 
 class Home extends Component {
   state = {
@@ -29,19 +30,6 @@ class Home extends Component {
     this.setState({
       productsList: result.results,
     });
-  };
-
-  formatPrice = (price) => {
-    const [reais, centavos] = price.toFixed(2).split('.');
-    return { reais, centavos };
-  };
-
-  formatOriginalPrice = (price) => {
-    if (price === null) {
-      return { originalReais: '', originalCentavos: '' };
-    }
-    const [originalReais, originalCentavos] = price.toFixed(2).split('.');
-    return { originalReais, originalCentavos };
   };
 
   handleChange = ({ target: { value } }) => {
@@ -124,10 +112,9 @@ class Home extends Component {
               </div>
             )
             : (productsList.map((product) => {
-              const { reais, centavos } = this.formatPrice(product.price);
-              const { originalReais, originalCentavos } = this
-                .formatOriginalPrice(product.original_price);
-              console.log(originalCentavos);
+              const { reais, centavos } = formatPrice(product.price);
+              const { originalReais, originalCentavos } = formatOriginalPrice(product
+                .original_price);
               return (
                 <div data-testid="product" key={ product.id } className="products__list">
                   <span className="products__list__span">
