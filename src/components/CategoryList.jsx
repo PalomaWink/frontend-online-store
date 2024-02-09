@@ -27,6 +27,7 @@ class CategoryList extends Component {
     this.setState({
       productsCategory: result.results,
     });
+    console.log(result.results);
   };
 
   handleAddToCart = (product) => {
@@ -60,6 +61,7 @@ class CategoryList extends Component {
                   type="radio"
                   onClick={ this.handleClickCategory }
                   id={ i.id }
+                  className="category__button"
                 >
                   {i.name}
                 </button>
@@ -76,7 +78,10 @@ class CategoryList extends Component {
               return (
                 <div data-testid="product" key={ product.id } className="products__list">
                   <span className="products__list__span">
-                    {product.attributes[0].value_name}
+                    {product.attributes[0].value_name !== null
+                    && product.attributes[0].value_name !== 'Undefined'
+                      ? (product.attributes[0].value_name)
+                      : ''}
                   </span>
                   <h2>{product.title}</h2>
                   <img src={ product.thumbnail } alt={ product.title } />

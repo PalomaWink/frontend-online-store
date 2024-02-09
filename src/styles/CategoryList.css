@@ -3,6 +3,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
+  background-color: #EDEDED;
 }
 
 .container__categorys {
@@ -10,9 +11,10 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-left: 10px;
   min-width: 15%;
   list-style: none;
+  margin-left: 10px;
+  box-shadow: 10px 0 5px -5px rgba(165, 162, 162, 0.5);
 }
 
 .container__categorys h2 {
@@ -20,7 +22,10 @@
   color: #42454b;
   letter-spacing: 2px;
   font-weight: lighter;
-  margin: 2px 0 2px 0;
+  width: 70%;
+  height: 50px;
+  margin: 2px 0 8px 0;
+  border-bottom: #42454b 2px solid;
 }
 
 .category__list {
@@ -42,4 +47,12 @@
   list-style: none;
   margin-top: 0;
   padding: 10px;
+}
+
+.category__button {
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
