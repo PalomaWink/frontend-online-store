@@ -1,0 +1,128 @@
+.container__main__shopping__cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #ededed;
+  position: relative;
+}
+
+.container__shopping__cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  max-width: 100%;
+  padding: 50px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); /* Exemplo de box-shadow */
+}
+
+.title__shopping__cart {
+  position: relative;
+}
+
+/* Gerado um pseudo-elemento, imitando uma borda*/
+.title__shopping__cart::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #94979D;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+.title__shopping__cart h1 {
+  font-size: 2rem;
+  margin: 10px 0 10px 0;
+  font-weight: normal;
+  text-align: center;
+}
+
+.shopping__products__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: #94979D 1px solid;
+  width: 80%;
+  height: auto;
+  padding-bottom: 10px;
+  margin: 15px 0 15px 0;
+}
+
+.shopping__products__list img {
+  background-color: transparent;
+  max-width: 25%;
+}
+
+.shopping__products__list h4 {
+  font-size: 1rem;
+  font-weight: normal;
+  word-wrap: break-word;
+  max-width: 30%;
+}
+
+.shopping__products__list p {
+  font-size: 1.2rem;
+}
+
+.shopping__products__quantity {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 18%;
+}
+
+.shopping__products__quantity p {
+  font-size: 25px;
+}
+
+.shopping__products__quantity button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.increase-button:hover, .decrease-button:hover {
+  color: #3483fa;
+}
+
+.remove-button:hover {
+  color: red;
+}
+
+.finish__button {
+  background-color: #3483fa;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.finish__button:hover {
+  background-color: #2672d8;
+}
+
+.back__home {
+  display: flex;
+  align-items: center;
+  color: green;
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 20px;
+}
+
+.back__home a, .back__home a:visited, .back__home a:hover, .back__home a:active {
+  text-decoration: none;
+  color: inherit; /* Faz o link usar a cor de texto definida na classe .back__home */
+}
