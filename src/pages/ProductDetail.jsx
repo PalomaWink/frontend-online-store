@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { FaStar, FaRegStar } from 'react-icons/fa';
 import { getProductById } from '../services/api';
+import '../styles/ProductDetails.css';
 
 class ProductDetail extends Component {
   state = {
@@ -100,8 +102,8 @@ class ProductDetail extends Component {
     const ratings = [um, dois, tres, quatro, cinco];
 
     return (
-      <div>
-        <div>
+      <div className="container__product__detail">
+        <div className="product__details">
           <h1>Detalhes do Produto</h1>
           <h2 data-testid="product-detail-name">{productsCategory.title}</h2>
           <img
@@ -111,6 +113,7 @@ class ProductDetail extends Component {
           />
           <p data-testid="product-detail-price">{productsCategory.price}</p>
           <button
+            className="button__product__detail"
             data-testid="product-detail-add-to-cart"
             onClick={ () => this.handleAddToCart(productsCategory) }
           >
@@ -120,46 +123,59 @@ class ProductDetail extends Component {
         <Link
           to="/carrinho"
         >
-          <button data-testid="shopping-cart-button">Carrinho</button>
+          <button
+            data-testid="shopping-cart-button"
+            className="button__product__detail"
+          >
+            Carrinho
+          </button>
         </Link>
         <div />
         <form>
           <input
             data-testid="product-detail-email"
+            className="input__email__product__detail"
             type="text"
             placeholder="Digite seu e-mail"
             onChange={ this.handleChangeEmail }
             value={ email }
           />
-          <label htmlFor="rate" value={ rate }>
-            {ratings.map((index) => (
-              <div
-                key={ index }
-              >
-                <input
-                  type="radio"
-                  data-testid={ `${index}-rating` }
-                  value={ index }
-                  name="rate"
-                  onChange={ this.handleChangeRate }
-                />
-                {index}
-              </div>
-            ))}
-          </label>
+          {ratings.map((index) => (
+            <label key={ index } htmlFor={ `rate-${index}` }>
+              <input
+                type="radio"
+                id={ `rate-${index}` }
+                data-testid={ `${index}-rating` }
+                value={ index }
+                name="rate"
+                onChange={ this.handleChangeRate }
+                style={ { display: 'none' } } // Esconde o input radio
+              />
+              <span>
+                {rate >= index ? (
+                  <FaStar color="orange" />
+                ) : (
+                  <FaRegStar color="gray" />
+                )}
+              </span>
+            </label>
+          ))}
           <textarea
+            className="textarea__product__detail"
             data-testid="product-detail-evaluation"
             onChange={ this.handleChangeTextArea }
             value={ textarea }
           />
           <button
+            className="button__product__detail"
             data-testid="submit-review-btn"
             onClick={ this.handleRequired }
           >
             Avaliar
           </button>
         </form>
-        {validate === false && <p data-testid="error-msg">Campos inválidos</p>}
+        {validate === false
+        && <p className="error-msg" data-testid="error-msg">Campos inválidos</p>}
         {(recLocalStorage !== null && recLocalStorage.length !== 0)
           && (recLocalStorage.map((rates, index) => (
             <div key={ index }>
