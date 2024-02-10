@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { CiCirclePlus, CiCircleMinus } from 'react-icons/ci';
 import { BsTrash } from 'react-icons/bs';
 import { TiArrowBack } from 'react-icons/ti';
+import ShoppingBag from '../components/ShoppingBag';
 
 import '../styles/ShoppingCart.css';
 
@@ -69,12 +70,24 @@ class ShoppingCart extends Component {
           </div>
           {recLocalStorage === null || recLocalStorage.length === 0
             ? (
-              <p
-                data-testid="shopping-cart-empty-message"
-                className="empty__message"
-              >
-                Seu carrinho está vazio
-              </p>
+              <div className="shopping__empty">
+                <ShoppingBag />
+                <p
+                  data-testid="shopping-cart-empty-message"
+                  className="empty__message"
+                >
+                  Seu carrinho está vazio
+                </p>
+                <Link
+                  to="/"
+                >
+                  <button
+                    className="finish__button"
+                  >
+                    Contiue comprando
+                  </button>
+                </Link>
+              </div>
             )
             : (recLocalStorage.map((product) => (
               <div key={ product.id } className="shopping__products__list">
@@ -110,16 +123,20 @@ class ShoppingCart extends Component {
                 </div>
               </div>
             )))}
-          <Link
-            to="/checkout"
-          >
-            <button
-              className="finish__button"
-              data-testid="checkout-products"
-            >
-              Finalizar compra
-            </button>
-          </Link>
+          {
+            recLocalStorage >= 1 && (
+              <Link
+                to="/checkout"
+              >
+                <button
+                  className="finish__button"
+                  data-testid="checkout-products"
+                >
+                  Finalizar compra
+                </button>
+              </Link>
+            )
+          }
         </div>
       </div>
     );

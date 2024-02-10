@@ -126,3 +126,11 @@
   text-decoration: none;
   color: inherit; /* Faz o link usar a cor de texto definida na classe .back__home */
 }
+
+.shopping__empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
