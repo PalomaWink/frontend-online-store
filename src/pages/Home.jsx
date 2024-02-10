@@ -121,7 +121,9 @@ class Home extends Component {
                     {product.attributes[0].value_name}
                   </span>
                   <h2>{product.title}</h2>
-                  <img src={ product.thumbnail } alt={ product.title } />
+                  <Link to={ `/detalhes/${product.id}` }>
+                    <img src={ product.thumbnail } alt={ product.title } />
+                  </Link>
                   {product.original_price !== null ? (
                     <span className="product__original__price">
                       R$
