@@ -15,3 +15,7 @@
   font-size: 0.8rem;
 }
 
+.home__products {
+  display: grid;
+  grid-template-columns:  20%  80%;
+}
