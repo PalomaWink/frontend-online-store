@@ -1,9 +1,9 @@
-.home__no__products, .home__message {
+.home__no__products, .home__message, .home__loading {
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.home__no__products {
+.home__no__products, .home__loading {
   color: #3483FA;
   font-size: 1.6rem;
   text-transform: uppercase;

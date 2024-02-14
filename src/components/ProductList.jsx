@@ -24,6 +24,7 @@ class ProductList extends Component {
 
   render() {
     const { products } = this.props;
+    console.log(products);
     return (
       <div className="container__products__list">
         {products.map((product) => {
@@ -32,10 +33,6 @@ class ProductList extends Component {
             .original_price);
           return (
             <div data-testid="product" key={ product.id } className="products__list">
-              <span className="products__list__span">
-                {product.attributes[0].value_name !== 'Undefined'
-                  ? (product.attributes[0].value_name) : ''}
-              </span>
               <h2>{product.title}</h2>
               <Link to={ `/detalhes/${product.id}` }>
                 <img src={ product.thumbnail } alt={ product.title } />

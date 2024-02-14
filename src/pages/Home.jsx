@@ -44,7 +44,7 @@ class Home extends Component {
     const { productsList, isLoading, searchAttempted } = this.state;
     let content;
     if (isLoading) {
-      content = <p>Carregando...</p>;
+      content = <p className="home__loading">Carregando...</p>;
     } else if (!isLoading && productsList.length === 0 && searchAttempted) {
       content = (
         <div>
@@ -79,7 +79,7 @@ class Home extends Component {
               data-testid="query-input"
               type="text"
               onChange={ this.handleChange }
-              placeholder="Digite algum termo de pesquisa ou escolha uma categoria."
+              placeholder="Digite algum termo de pesquisa."
             />
             <button
               data-testid="query-button"
