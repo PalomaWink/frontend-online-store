@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { TfiSearch } from 'react-icons/tfi';
 import { PiShoppingCartThin } from 'react-icons/pi';
+import { FiAlignJustify } from 'react-icons/fi';
 import CategoryList from '../components/CategoryList';
 import { getProductsFromCategoryAndQuery } from '../services/api';
 import logo from '../images/logo_mercado_livre.png';
@@ -14,6 +15,13 @@ class Home extends Component {
     productsList: [],
     isLoading: false,
     searchAttempted: false,
+    areCategoriesVisible: false,
+  };
+
+  toggleCategories = () => {
+    this.setState((prevState) => ({
+      areCategoriesVisible: !prevState.areCategoriesVisible,
+    }));
   };
 
   handleClickBusca = async () => {
@@ -41,7 +49,7 @@ class Home extends Component {
   };
 
   render() {
-    const { productsList, isLoading, searchAttempted } = this.state;
+    const { productsList, isLoading, searchAttempted, areCategoriesVisible } = this.state;
     let content;
     if (isLoading) {
       content = <p className="home__loading">Carregando...</p>;
@@ -66,6 +74,9 @@ class Home extends Component {
     return (
       <div>
         <div className="navbar">
+          <button className="navbar__toggle" onClick={ this.toggleCategories }>
+            <FiAlignJustify />
+          </button>
           <div className="navbar__logo">
             <img alt="logo do site" src={ logo } />
             <p>
@@ -79,7 +90,7 @@ class Home extends Component {
               data-testid="query-input"
               type="text"
               onChange={ this.handleChange }
-              placeholder="Digite algum termo de pesquisa."
+              placeholder="Digite algum termo de pesquisa"
             />
             <button
               data-testid="query-button"
@@ -97,7 +108,10 @@ class Home extends Component {
             </Link>
           </div>
         </div>
-        <div className="home__products">
+        <div
+          className={ `categories ${areCategoriesVisible
+            ? 'active' : 'home__products'}` }
+        >
           <CategoryList updateProductsFromCategory={ this.updateProductsFromCategory } />
 
           {content}
