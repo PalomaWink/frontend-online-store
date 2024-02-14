@@ -24,10 +24,9 @@ class ProductList extends Component {
 
   render() {
     const { products } = this.props;
-    const MAX_PRODUCTS = 12;
     return (
       <div className="container__products__list">
-        {products.slice(0, MAX_PRODUCTS).map((product) => {
+        {products.map((product) => {
           const { reais, centavos } = formatPrice(product.price);
           const { originalReais, originalCentavos } = formatOriginalPrice(product
             .original_price);

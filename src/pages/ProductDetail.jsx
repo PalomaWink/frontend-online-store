@@ -100,7 +100,6 @@ class ProductDetail extends Component {
     const quatro = 4;
     const cinco = 5;
     const ratings = [um, dois, tres, quatro, cinco];
-    console.log(productsCategory.attributes);
     return (
       <div className="container__product__detail">
         <div className="product__details">
