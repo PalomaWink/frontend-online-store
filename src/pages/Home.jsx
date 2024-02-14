@@ -13,11 +13,12 @@ class Home extends Component {
     category: '',
     productsList: [],
     isLoading: false,
+    searchAttempted: false,
   };
 
   handleClickBusca = async () => {
     const { nome, category } = this.state;
-    this.setState({ isLoading: true });
+    this.setState({ isLoading: true, searchAttempted: true });
     const result = await getProductsFromCategoryAndQuery(category, nome);
     this.setState({
       productsList: result.results,
@@ -29,6 +30,7 @@ class Home extends Component {
     this.setState({
       productsList: products,
       isLoading: false,
+      searchAttempted: true,
     });
   };
 
@@ -39,11 +41,11 @@ class Home extends Component {
   };
 
   render() {
-    const { productsList, isLoading } = this.state;
+    const { productsList, isLoading, searchAttempted } = this.state;
     let content;
     if (isLoading) {
       content = <p>Carregando...</p>;
-    } else if (isLoading || productsList.length === 0) {
+    } else if (!isLoading && productsList.length === 0 && searchAttempted) {
       content = (
         <div>
           <p className="home__no__products">
