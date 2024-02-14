@@ -100,7 +100,7 @@ class ProductDetail extends Component {
     const quatro = 4;
     const cinco = 5;
     const ratings = [um, dois, tres, quatro, cinco];
-
+    console.log(productsCategory.attributes);
     return (
       <div className="container__product__detail">
         <div className="product__details">
@@ -111,7 +111,13 @@ class ProductDetail extends Component {
             src={ productsCategory.thumbnail }
             alt={ productsCategory.title }
           />
-          <p data-testid="product-detail-price">{productsCategory.price}</p>
+          <p data-testid="product-detail-price">
+            R$
+            {productsCategory.price}
+          </p>
+          <span>
+            {productsCategory.value_name}
+          </span>
           <button
             className="button__product__detail"
             data-testid="product-detail-add-to-cart"
