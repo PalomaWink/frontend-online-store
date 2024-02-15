@@ -56,12 +56,39 @@
 }
 
 .navbar__toggle {
-  display: none; /* Oculta o botão em telas maiores */
+  display: none;
   font-size: 1.5rem;
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 834px){
+  .navbar {
+    width: 100%;
+  }
+
+  .navbar__logo {
+    display: flex;
+  }
+
+  .navbar__logo > p, .navbar__toggle {
+    display: none;
+  }
+
+  .navbar__search {
+    width: 70%;
+  }
+
+  .navbar__search input {
+    max-width: 70%;
+  }
+
+  .navbar__search input::placeholder {
+    font-size: 0.65rem;
+  }
+
+}
+
+@media screen and (max-width: 480px){
   .navbar__logo {
     width: 0%;
   }

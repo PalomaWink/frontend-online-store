@@ -20,7 +20,14 @@
   grid-template-columns:  20%  80%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 840px) {
+  .home__products {
+    display: grid;
+    grid-template-columns:  30%  70%;
+  }
+}
+
+@media screen and (max-width: 480px){
   .home__container {
     grid-template-columns: 1fr;
   }

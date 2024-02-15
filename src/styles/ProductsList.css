@@ -117,11 +117,24 @@
   text-decoration: line-through;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .container__products__list {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .container__products__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .products__list {
+    width: calc(40% - 5px);
+    margin: 15px;
   }
 }
