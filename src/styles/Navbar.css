@@ -65,7 +65,7 @@
   .navbar__logo {
     width: 0%;
   }
-  .navbar__logo p, img {
+  .navbar__logo > p, .navbar__logo > img{
     visibility: hidden;
   }
 
@@ -91,7 +91,4 @@
     display: none;
   }
 
-  .categories.active {
-    display: block;
-  }
 }

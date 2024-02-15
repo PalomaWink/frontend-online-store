@@ -108,13 +108,15 @@ class Home extends Component {
             </Link>
           </div>
         </div>
-        <div
-          className={ `categories ${areCategoriesVisible
-            ? 'active' : 'home__products'}` }
-        >
-          <CategoryList updateProductsFromCategory={ this.updateProductsFromCategory } />
-
-          {content}
+        <div className="home__products">
+          <div className={ `categories ${areCategoriesVisible ? 'active' : ''}` }>
+            <CategoryList
+              updateProductsFromCategory={ this.updateProductsFromCategory }
+            />
+          </div>
+          <div className="products-container">
+            {content}
+          </div>
         </div>
       </div>
 

@@ -36,7 +36,6 @@
   display: block;
   max-width: 100%;
   max-height: 200px;
-  height: auto;
   margin: 0 auto;
 }
 
@@ -116,4 +115,13 @@
   font-size: 0.6rem;
   vertical-align: super;
   text-decoration: line-through;
+}
+
+@media screen and (max-width: 768px) {
+  .container__products__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
