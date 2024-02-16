@@ -21,8 +21,8 @@ Este projeto foi desenvolvido em grupo, como parte de um dos projetos avaliativo
         <pre>JavaScript</pre>
     </td>
     <td align="center">
-        <img src="https://techstack-generator.vercel.app/jest-icon.svg" width="65px" alt="Jest icon"/><br />
-        <pre>Jest</pre>
+        <img src="https://techstack-generator.vercel.app/eslint-icon.svg" width="65px" alt="eslint icon"/><br />
+        <pre>EsLint</pre>
     </td>
     <td align="center">
         <img src="https://skillicons.dev/icons?i=html" width="65px" alt="html icon"/><br />
@@ -46,7 +46,7 @@ Este projeto foi desenvolvido em grupo, como parte de um dos projetos avaliativo
 ## Por que essas tecnologias? 🤔
 - **React:** Escolhido pela sua liderança no desenvolvimento front-end, pelo seu conceito de componentes reutilizáveis, o que ajuda na manutenção e a escalabilidade do projeto. Isso não só facilita a vida na hora de manter e fazer o projeto crescer, mas também torna super prático montar interfaces que interagem com o usuário de um jeito bem fluido.
 - **JavaScript:** Sua universalidade e flexibilidade possibilitam uma integração eficiente com a API do Mercado Livre.
-- **Jest:** Garante a qualidade do código com testes precisos e eficazes.
+- **EsLint:** Garante a qualidade e a padronização do código.
 - **NodeJS:** Por ser o runtime do JavaScript para o backend e por possibilitar usar o NPM (Node Package Manager) sendo o repositório oficial para publicação de pacotes NodeJS.
 - **HTML5 & CSS3:** Indispensáveis para uma interface visualmente atraente e uma experiência de usuário fluída.
 - **Vercel:** Escolha para hospedagem devido à sua simplicidade, intuição e eficiência, alinhada às nossas necessidades.
