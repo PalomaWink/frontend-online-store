@@ -44,9 +44,9 @@ Este projeto foi desenvolvido em grupo, como parte de um dos projetos avaliativo
 </table>
 
 ## Por que essas tecnologias? 🤔
-- **React:** Escolhido pela sua liderança no desenvolvimento front-end, otimiza a renderização e gerencia estados complexos — essencial para a funcionalidade do carrinho de compras.
+- **React:** Escolhido pela sua liderança no desenvolvimento front-end, pelo seu conceito de componentes reutilizáveis, o que ajuda na manutenção e a escalabilidade do projeto. Isso não só facilita a vida na hora de manter e fazer o projeto crescer, mas também torna super prático montar interfaces que interagem com o usuário de um jeito bem fluido.
 - **JavaScript:** Sua universalidade e flexibilidade possibilitam uma integração eficiente com a API do Mercado Livre.
-- **Jest:** Garante a robustez do código com testes precisos e eficazes.
+- **Jest:** Garante a qualidade do código com testes precisos e eficazes.
 - **NodeJS:** Por ser o runtime do JavaScript para o backend e por possibilitar usar o NPM (Node Package Manager) sendo o repositório oficial para publicação de pacotes NodeJS.
 - **HTML5 & CSS3:** Indispensáveis para uma interface visualmente atraente e uma experiência de usuário fluída.
 - **Vercel:** Escolha para hospedagem devido à sua simplicidade, intuição e eficiência, alinhada às nossas necessidades.
@@ -57,10 +57,11 @@ Este projeto utiliza a [API do Mercado Livre](https://developers.mercadolivre.co
 
 ## Como Executar o Projeto 👾
 
-1. Clone o repositório
-2. Instale as dependências com `npm install`
-3. Inicie o servidor com `npm start`
-4. Acesse a aplicação em `http://localhost:3000`
+1. Clone o repositório: git@github.com:PalomaWink/frontend-online-store.git
+2. Vá para a pasta do projeto: cd frontend-online-store
+3. Instale as dependências com `npm install`
+4. Inicie o servidor com `npm start`
+5. Acesse a aplicação em `http://localhost:3000`
 
 ## Colaboradores 👩🏾‍💻👨🏻‍💻
 
