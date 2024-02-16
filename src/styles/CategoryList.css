@@ -44,3 +44,19 @@
   cursor: pointer;
   transition: background-color 0.3s;
 }
+
+@media screen and (max-width: 840px) {
+  .container__categorys {
+    width: 100%;
+  }
+
+  .category__button {
+    padding: 5px;
+  }
+
+  .category__list {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  
+}
