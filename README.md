@@ -57,8 +57,8 @@ Este projeto utiliza a [API do Mercado Livre](https://developers.mercadolivre.co
 
 ## Como Executar o Projeto 👾
 
-1. Clone o repositório: git@github.com:PalomaWink/frontend-online-store.git
-2. Vá para a pasta do projeto: cd frontend-online-store
+1. Clone o repositório: `git@github.com:PalomaWink/frontend-online-store.git`
+2. Vá para a pasta do projeto: `cd frontend-online-store`
 3. Instale as dependências com `npm install`
 4. Inicie o servidor com `npm start`
 5. Acesse a aplicação em `http://localhost:3000`
