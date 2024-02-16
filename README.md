@@ -4,20 +4,52 @@
 
 ## Sobre o Projeto 📜
 
-Este projeto foi desenvolvido em grupo, como parte de um dos projetos avaliativos da Trybe. Se trata de uma aplicação web que utiliza a API do Mercado Livre para exibir produtos e permitir a interação do usuário com eles. Os usuários podem visualizar detalhes dos produtos e suas avaliações, adicionar e remover produtos do carrinho, visualizar o carrinho e simular a finalização da compra dos itens.
+Este projeto foi desenvolvido em grupo, como parte de um dos projetos avaliativos da Trybe, é uma representação simplificada de uma loja online, integrada à API do Mercado Livre. Através desta aplicação, buscamos simular uma experiência de compra realista, permitindo aos usuários pesquisar produtos por categorias, adicionar e remover itens do carrinho, e visualizar detalhes e avaliações de produtos. O objetivo era criar uma ferramenta útil e interativa, focando na aplicação de conceitos de desenvolvimento web e trabalho em equipe.
 
 💻 [Aplicação online](https://front-end-online-store-alpha.vercel.app/)
 
 ## Tecnologias Utilizadas ⚒️
 
-<div style="display: inline_block">
-    <img align="center" alt="JavaSript" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
-    <img align="center" alt="NodeJs" src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white">
-    <img align="center" alt="React" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
-    <img align="center" alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-    <img align="center" alt="CSS3" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
-    <img align="center" alt="Vencel" src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white">
-</div><br>
+<table align="center">
+  <tr>
+    <td align="center">
+        <img src="https://techstack-generator.vercel.app/react-icon.svg" width="65px" alt="React icon"/><br />
+        <pre>React</pre>
+    </td>
+    <td align="center">
+        <img src="https://techstack-generator.vercel.app/js-icon.svg" width="65px" alt="Javascript icon"/><br />
+        <pre>JavaScript</pre>
+    </td>
+    <td align="center">
+        <img src="https://techstack-generator.vercel.app/jest-icon.svg" width="65px" alt="Jest icon"/><br />
+        <pre>Jest</pre>
+    </td>
+    <td align="center">
+        <img src="https://skillicons.dev/icons?i=html" width="65px" alt="html icon"/><br />
+        <pre>HTML5</pre>
+    </td>
+    <td align="center">
+        <img src="https://skillicons.dev/icons?i=css" width="65px" alt="css icon"/><br />
+        <pre>CSS3</pre>
+    </td>
+    <td align="center">
+        <img src="https://skillicons.dev/icons?i=nodejs" width="65px" alt="Node icon"/><br />
+        <pre>NodeJS</pre>
+    </td>
+      <td align="center">
+        <img src="https://skillicons.dev/icons?i=vercel" width="65px" alt="Node icon"/><br />
+        <pre>Vercel</pre>
+    </td>
+  </tr>
+</table>
+
+## Por que essas tecnologias? 🤔
+- **React:** Escolhido pela sua liderança no desenvolvimento front-end, otimiza a renderização e gerencia estados complexos — essencial para a funcionalidade do carrinho de compras.
+- **JavaScript:** Sua universalidade e flexibilidade possibilitam uma integração eficiente com a API do Mercado Livre.
+- **Jest:** Garante a robustez do código com testes precisos e eficazes.
+- **NodeJS:** Por ser o runtime do JavaScript para o backend e por possibilitar usar o NPM (Node Package Manager) sendo o repositório oficial para publicação de pacotes NodeJS.
+- **HTML5 & CSS3:** Indispensáveis para uma interface visualmente atraente e uma experiência de usuário fluída.
+- **Vercel:** Escolha para hospedagem devido à sua simplicidade, intuição e eficiência, alinhada às nossas necessidades.
 
 ## API
 
